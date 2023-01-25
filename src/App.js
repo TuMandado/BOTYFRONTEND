@@ -3,12 +3,29 @@ import './App.css';
 // Import react router
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { connect } from 'react-redux';
-
+// import LandingPage from './LandingPage';
+// import Catalogo from './Catalogo';
+// import CompanyRegistration from './CompanyRegistration';
+// import Competencia from './Competencia';
+// import General from './General';
+// import Home from './Home';
+// import Projects from './Projects';
+// import UserRegistration from './UserRegistration';
+// import UserLogin from './UserLogin';
+// import Admin from './Admin';
+// import Contact from './Contact';
 import PAGES from './pages';
-const { everyUserList, loggedUserList, notLoggedUserList, adminUserList } = PAGES;
+
 
 // Create a function App to render the pages with the logic of the login status
 function App(props) {
+  const pages = PAGES();
+  const {
+    everyUserList,
+    loggedUserList,
+    notLoggedUserList,
+    adminUserList,
+  } = pages;
   // Rewrite using routes
   return (
     <Router>

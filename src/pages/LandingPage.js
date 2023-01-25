@@ -4,8 +4,8 @@ import CarouselComp from '../components/pages/landing-page/Carousel'
 import AllPacksComponents from '../components/pages/landing-page/AllPacksComponents';
 import styled from 'styled-components';
 import Button from '../components/common/Button';
-import Utils from '../utils/Utils'
-const { redirectToPath } = Utils.navigation;
+import PAGES from './index';
+import { Link } from 'react-router-dom';
 
 // Create a styled component div with a white background and rounded corners and a 60% width
 const TextContainer = styled.div`
@@ -72,6 +72,10 @@ const url = (name, wrap = false) =>
 
 function LandingPage() {
     const parallax = useRef(null)
+    const pages = PAGES();
+    const { pathsDict } = pages;
+    const loginPath = pathsDict.userlogin.path;
+    const contactPath = pathsDict.contact.path;
     return (
         <div style={{ width: '100%', height: '100%', background: '#253237' }}>
             <Parallax ref={parallax} pages={5}>
@@ -96,69 +100,69 @@ function LandingPage() {
                 />
 
                 <ParallaxLayer offset={1.3} speed={-0.3} style={{ pointerEvents: 'none' }}>
-                    <img 
-                    alt='satellite4'
-                    src={url('satellite4')} 
-                    style={{ width: '15%', marginLeft: '70%' }} />
+                    <img
+                        alt='satellite4'
+                        src={url('satellite4')}
+                        style={{ width: '15%', marginLeft: '70%' }} />
                 </ParallaxLayer>
 
                 <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
-                    <img 
-                    alt='cloud1'
-                    src={url('cloud')} 
-                    style={{ display: 'block', width: '20%', marginLeft: '55%' }} />
-                    <img 
-                    alt='cloud2'
-                    src={url('cloud')} 
-                    style={{ display: 'block', width: '10%', marginLeft: '15%' }} />
+                    <img
+                        alt='cloud1'
+                        src={url('cloud')}
+                        style={{ display: 'block', width: '20%', marginLeft: '55%' }} />
+                    <img
+                        alt='cloud2'
+                        src={url('cloud')}
+                        style={{ display: 'block', width: '10%', marginLeft: '15%' }} />
                 </ParallaxLayer>
 
                 <ParallaxLayer offset={1.75} speed={0.5} style={{ opacity: 0.1 }}>
-                    <img 
-                    alt='cloud3'
-                    src={url('cloud')} 
-                    style={{ display: 'block', width: '20%', marginLeft: '70%' }} />
-                    <img 
-                    alt='cloud4'
-                    src={url('cloud')} 
-                    style={{ display: 'block', width: '20%', marginLeft: '40%' }} />
+                    <img
+                        alt='cloud3'
+                        src={url('cloud')}
+                        style={{ display: 'block', width: '20%', marginLeft: '70%' }} />
+                    <img
+                        alt='cloud4'
+                        src={url('cloud')}
+                        style={{ display: 'block', width: '20%', marginLeft: '40%' }} />
                 </ParallaxLayer>
 
                 <ParallaxLayer offset={1} speed={0.2} style={{ opacity: 0.2 }}>
-                    <img 
-                    alt='cloud5'
-                    src={url('cloud')} 
-                    style={{ display: 'block', width: '10%', marginLeft: '10%' }} />
-                    <img 
-                    alt='cloud6'
-                    src={url('cloud')} 
-                    style={{ display: 'block', width: '20%', marginLeft: '75%' }} />
+                    <img
+                        alt='cloud5'
+                        src={url('cloud')}
+                        style={{ display: 'block', width: '10%', marginLeft: '10%' }} />
+                    <img
+                        alt='cloud6'
+                        src={url('cloud')}
+                        style={{ display: 'block', width: '20%', marginLeft: '75%' }} />
                 </ParallaxLayer>
 
                 <ParallaxLayer offset={1.6} speed={-0.1} style={{ opacity: 0.4 }}>
                     <img
-                    alt='cloud7' 
-                    src={url('cloud')} 
-                    style={{ display: 'block', width: '20%', marginLeft: '60%' }} />
-                    <img 
-                    alt='cloud8'
-                    src={url('cloud')} 
-                    style={{ display: 'block', width: '25%', marginLeft: '30%' }} />
-                    <img 
-                    alt='cloud9'
-                    src={url('cloud')} 
-                    style={{ display: 'block', width: '10%', marginLeft: '80%' }} />
+                        alt='cloud7'
+                        src={url('cloud')}
+                        style={{ display: 'block', width: '20%', marginLeft: '60%' }} />
+                    <img
+                        alt='cloud8'
+                        src={url('cloud')}
+                        style={{ display: 'block', width: '25%', marginLeft: '30%' }} />
+                    <img
+                        alt='cloud9'
+                        src={url('cloud')}
+                        style={{ display: 'block', width: '10%', marginLeft: '80%' }} />
                 </ParallaxLayer>
 
                 <ParallaxLayer offset={2.6} speed={0.4} style={{ opacity: 0.6 }}>
-                    <img 
-                    alt='cloud10'
-                    src={url('cloud')} 
-                    style={{ display: 'block', width: '20%', marginLeft: '5%' }} />
-                    <img 
-                    alt='cloud11'
-                    src={url('cloud')} 
-                    style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
+                    <img
+                        alt='cloud10'
+                        src={url('cloud')}
+                        style={{ display: 'block', width: '20%', marginLeft: '5%' }} />
+                    <img
+                        alt='cloud11'
+                        src={url('cloud')}
+                        style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
                 </ParallaxLayer>
 
                 <ParallaxLayer
@@ -170,10 +174,10 @@ function LandingPage() {
                         justifyContent: 'center',
                         pointerEvents: 'none',
                     }}>
-                    <img 
-                    alt='earth'
-                    src={url('earth')} 
-                    style={{ width: '60%' }} />
+                    <img
+                        alt='earth'
+                        src={url('earth')}
+                        style={{ width: '60%' }} />
                 </ParallaxLayer>
 
                 <ParallaxLayer
@@ -224,10 +228,10 @@ function LandingPage() {
                         alignItems: 'center',
                         justifyContent: 'center'
                     }}>
-                    <BotyHead 
-                    alt='Boty Head'
-                    src={BotyHeadImage}
-                     />
+                    <BotyHead
+                        alt='Boty Head'
+                        src={BotyHeadImage}
+                    />
                 </ParallaxLayer>
 
                 <ParallaxLayer
@@ -278,9 +282,9 @@ function LandingPage() {
                         // pointerEvents: 'none'
                     }}>
                     <BotyImageContainer >
-                        <BotyImage 
-                        alt='Boty Body'
-                        src={BotyBodyImage} />
+                        <BotyImage
+                            alt='Boty Body'
+                            src={BotyBodyImage} />
                     </BotyImageContainer>
                 </ParallaxLayer>
 
@@ -293,7 +297,11 @@ function LandingPage() {
                         marginTop: '20%',
                         marginLeft: '60%'
                     }}    >
-                    <Button text="Conéctate con nosotros" onClick={() => redirectToPath("contacto")} />
+                    <Link 
+                    style={{textDecoration: 'none'}}
+                    to={contactPath}>
+                        <Button text="Conéctate con nosotros" />
+                    </Link>
                 </ParallaxLayer>
                 <ParallaxLayer
                     offset={4}
@@ -304,7 +312,12 @@ function LandingPage() {
                         marginTop: '30%',
                         marginLeft: '60%'
                     }}    >
-                    <Button text="Regístrate ahora" color="#3A00A3" onClick={() => redirectToPath("register")} />
+                    <Link 
+                    to={loginPath}
+                    style={{textDecoration: 'none'}}
+                    >
+                        <Button text="Regístrate ahora" color="#3A00A3" />
+                    </Link>
                 </ParallaxLayer>
             </Parallax>
         </div>

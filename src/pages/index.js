@@ -71,13 +71,30 @@ const loggedUserList = Object.values(pages.loggedUser);
 const notLoggedUserList = Object.values(pages.notLoggedUser);
 const adminUserList = Object.values(pages.adminUser);
 
-const PAGES = {
-    everyUserList,
-    loggedUserList,
-    notLoggedUserList,
-    adminUserList,
+const pathsDict = Object.values(pages).reduce((acc, page) => {
+    return {
+        ...acc,
+        ...page,
+    };
+}, {});
+
+// const PAGES = {
+//     everyUserList,
+//     loggedUserList,
+//     notLoggedUserList,
+//     adminUserList,
+// };
+
+// Change PAGES variable to a function that returns the pages
+const PAGES = () => {
+    return {
+        everyUserList,
+        loggedUserList,
+        notLoggedUserList,
+        adminUserList,
+        pathsDict,
+    };
 };
 
 // Export the function
 export default PAGES
-
