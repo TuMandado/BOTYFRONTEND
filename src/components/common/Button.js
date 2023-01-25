@@ -29,10 +29,13 @@ text-decoration: none;
 function Button({
     text = "Button",
     color = "#00DFEC",
+    type = "button",
     onClick = () => console.log("Button clicked")
 }) {
     return (
-        <StyledButton color={color} onClick={onClick}>
+        <StyledButton 
+        color={color} 
+        onClick={onClick}>
             {text}
         </StyledButton>
     );
