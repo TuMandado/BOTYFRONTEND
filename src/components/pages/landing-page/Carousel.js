@@ -14,17 +14,14 @@ const Img = styled.img`
 
 // Create a styled component for the Carousel Container
 // It should be a div that has a width of 60% of the screen and be centered and have a rounded border, a white background
-const Carousel_Container = styled.div`
+const CarouselContainer = styled.div`
     width: 80%;
     margin: 0 auto;
     border-radius: 10px;
     background-color: white;
 `;
 
-
-
-
-const Carousel_Comp = () => {
+const CarouselComp = () => {
     // THE CAROUSEL NEEDS THE FOLLOWING REQUIERMENTS:
     // 1. The carousel needs to be responsive
     // 2. The carousel needs to be auto-play
@@ -55,7 +52,7 @@ const Carousel_Comp = () => {
     };
 
     return (
-        <Carousel_Container>
+        <CarouselContainer>
             <Carousel
                 responsive={responsive}
                 autoPlay={true}
@@ -66,16 +63,23 @@ const Carousel_Comp = () => {
                 removeArrowOnDeviceType={['tablet', 'mobile', 'desktop']
                 }
             >
-                <Img src="https://botycloud.com/wp-content/uploads/2022/06/latyn-grupo.jpg" alt="latyn-grupo" />
-                <Img src="https://botycloud.com/wp-content/uploads/2022/06/piazza.jpg" alt="piazza" />
-                <Img src="https://botycloud.com/wp-content/uploads/2022/06/bosca.jpg" alt="bosca" />
-                <Img src="https://botycloud.com/wp-content/uploads/2022/06/johnson-acero.jpg" alt="johnson-acero" />
-                <Img src="https://botycloud.com/wp-content/uploads/2022/06/kalydon-tools.jpg" alt="kalydon-tools" />
-                <Img src="https://botycloud.com/wp-content/uploads/2022/06/aftech.jpg" alt="aftech" />
-                <Img src="https://botycloud.com/wp-content/uploads/2022/06/morelli.jpg" alt="morelli" />
+                <Img 
+                src="https://botycloud.com/wp-content/uploads/2022/06/latyn-grupo.jpg" alt="latyn-grupo" />
+                <Img 
+                src="https://botycloud.com/wp-content/uploads/2022/06/piazza.jpg" alt="piazza" />
+                <Img 
+                src="https://botycloud.com/wp-content/uploads/2022/06/bosca.jpg" alt="bosca" />
+                <Img 
+                src="https://botycloud.com/wp-content/uploads/2022/06/johnson-acero.jpg" alt="johnson-acero" />
+                <Img 
+                src="https://botycloud.com/wp-content/uploads/2022/06/kalydon-tools.jpg" alt="kalydon-tools" />
+                <Img 
+                src="https://botycloud.com/wp-content/uploads/2022/06/aftech.jpg" alt="aftech" />
+                <Img 
+                src="https://botycloud.com/wp-content/uploads/2022/06/morelli.jpg" alt="morelli" />
             </Carousel>
-        </Carousel_Container>
+        </CarouselContainer>
     );
 };
 
-export default Carousel_Comp;
+export default CarouselComp;

@@ -1,17 +1,11 @@
-// import React from 'react'
-// import { Parallax, ParallaxLayer } from 'react-spring/parallax'
-// // import './LandingPage.css'
-// import { Link } from 'react-router-dom'
-
-// import background from '../images/background.jpg'
-
-
-
 import React, { useRef } from 'react'
-import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax'
-import Carousel_Comp from '../components/pages/landing-page/Carousel'
+import { Parallax, ParallaxLayer } from '@react-spring/parallax'
+import CarouselComp from '../components/pages/landing-page/Carousel'
 import AllPacksComponents from '../components/pages/landing-page/AllPacksComponents';
 import styled from 'styled-components';
+import Button from '../components/common/Button';
+import Utils from '../utils/Utils'
+const { redirectToPath } = Utils.navigation;
 
 // Create a styled component div with a white background and rounded corners and a 60% width
 const TextContainer = styled.div`
@@ -29,6 +23,15 @@ const Text = styled.p`
     color: #a0a0a0;
 `;
 
+const TextII = styled.div`
+    color: #fff; 
+    font-size: 1.5em; 
+    font-weight: bold; 
+    text-align: center; 
+    width: 60%; // llevalo un poco mas a la izquierda un 30%
+    margin-right: 30%;
+`;
+
 const TitleText = styled.h1`
     font-size: 3rem;
     font-weight: 700;
@@ -37,6 +40,31 @@ const TitleText = styled.h1`
     // Make the text centered
     text-align: center;
 `;
+
+const BotyImage = styled.img`
+    height: '400px',
+    width: "auto"
+`;
+
+const BotyImageContainer = styled.div`
+    display: block; 
+    width: 20%; 
+    margin-top: 0%; 
+    margin-right: 30%;
+`;
+
+const BotyHead = styled.img`
+    // Make the image 20% width
+    width: 20%;
+`;
+
+// Images
+const BotyHeadImage = "https://botycloud.com/wp-content/uploads/2022/09/Boty.gif";
+const BotyBodyImage = "https://botycloud.com/wp-content/uploads/2022/06/img-boty.svg";
+
+// Text
+const text1Str = "Ofrecemos datos en tiempo real para clientes exigentes de MercadoLibre para aumentar sus ventas."
+const text2Str = "¡Optimiza tu negocio en Mercado Libre con nuestra solución en la nube! Procesamos la información de tus productos para brindarte insights valiosos y automatizar tus procesos de venta. ¡Deja que la nube haga el trabajo pesado, mientras te concentras en lo que realmente importa: vender! ¡Con nuestra solución en la nube, estarás a la vanguardia de tu negocio!"
 
 // Little helpers ...
 const url = (name, wrap = false) =>
@@ -47,9 +75,6 @@ function LandingPage() {
     return (
         <div style={{ width: '100%', height: '100%', background: '#253237' }}>
             <Parallax ref={parallax} pages={5}>
-                {/* <ParallaxLayer
-                    factor={2}
-                    offset={1} speed={1} style={{ backgroundColor: '#3a00a3' }} /> */}
                 <ParallaxLayer
                     factor={7}
                     offset={1}
@@ -57,13 +82,6 @@ function LandingPage() {
                     style={{
                         background: 'linear-gradient(180deg, rgba(58,0,163,1) 0%, rgba(0,223,236,1) 35%, rgba(255,255,255,1) 60%, rgba(255,255,255,1) 80%, rgba(0,212,255,1) 100%)'
                     }} />
-                {/* <ParallaxLayer
-                    factor={3}
-                    offset={3}
-                    speed={1}
-                    style={{
-                        background: 'linear-gradient(to bottom, #fff, #ffe600)'
-                    }} /> */}
 
 
 
@@ -78,33 +96,69 @@ function LandingPage() {
                 />
 
                 <ParallaxLayer offset={1.3} speed={-0.3} style={{ pointerEvents: 'none' }}>
-                    <img src={url('satellite4')} style={{ width: '15%', marginLeft: '70%' }} />
+                    <img 
+                    alt='satellite4'
+                    src={url('satellite4')} 
+                    style={{ width: '15%', marginLeft: '70%' }} />
                 </ParallaxLayer>
 
                 <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
-                    <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '55%' }} />
-                    <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '15%' }} />
+                    <img 
+                    alt='cloud1'
+                    src={url('cloud')} 
+                    style={{ display: 'block', width: '20%', marginLeft: '55%' }} />
+                    <img 
+                    alt='cloud2'
+                    src={url('cloud')} 
+                    style={{ display: 'block', width: '10%', marginLeft: '15%' }} />
                 </ParallaxLayer>
 
                 <ParallaxLayer offset={1.75} speed={0.5} style={{ opacity: 0.1 }}>
-                    <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '70%' }} />
-                    <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '40%' }} />
+                    <img 
+                    alt='cloud3'
+                    src={url('cloud')} 
+                    style={{ display: 'block', width: '20%', marginLeft: '70%' }} />
+                    <img 
+                    alt='cloud4'
+                    src={url('cloud')} 
+                    style={{ display: 'block', width: '20%', marginLeft: '40%' }} />
                 </ParallaxLayer>
 
                 <ParallaxLayer offset={1} speed={0.2} style={{ opacity: 0.2 }}>
-                    <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '10%' }} />
-                    <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '75%' }} />
+                    <img 
+                    alt='cloud5'
+                    src={url('cloud')} 
+                    style={{ display: 'block', width: '10%', marginLeft: '10%' }} />
+                    <img 
+                    alt='cloud6'
+                    src={url('cloud')} 
+                    style={{ display: 'block', width: '20%', marginLeft: '75%' }} />
                 </ParallaxLayer>
 
                 <ParallaxLayer offset={1.6} speed={-0.1} style={{ opacity: 0.4 }}>
-                    <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '60%' }} />
-                    <img src={url('cloud')} style={{ display: 'block', width: '25%', marginLeft: '30%' }} />
-                    <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '80%' }} />
+                    <img
+                    alt='cloud7' 
+                    src={url('cloud')} 
+                    style={{ display: 'block', width: '20%', marginLeft: '60%' }} />
+                    <img 
+                    alt='cloud8'
+                    src={url('cloud')} 
+                    style={{ display: 'block', width: '25%', marginLeft: '30%' }} />
+                    <img 
+                    alt='cloud9'
+                    src={url('cloud')} 
+                    style={{ display: 'block', width: '10%', marginLeft: '80%' }} />
                 </ParallaxLayer>
 
                 <ParallaxLayer offset={2.6} speed={0.4} style={{ opacity: 0.6 }}>
-                    <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '5%' }} />
-                    <img src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
+                    <img 
+                    alt='cloud10'
+                    src={url('cloud')} 
+                    style={{ display: 'block', width: '20%', marginLeft: '5%' }} />
+                    <img 
+                    alt='cloud11'
+                    src={url('cloud')} 
+                    style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
                 </ParallaxLayer>
 
                 <ParallaxLayer
@@ -116,7 +170,10 @@ function LandingPage() {
                         justifyContent: 'center',
                         pointerEvents: 'none',
                     }}>
-                    <img src={url('earth')} style={{ width: '60%' }} />
+                    <img 
+                    alt='earth'
+                    src={url('earth')} 
+                    style={{ width: '60%' }} />
                 </ParallaxLayer>
 
                 <ParallaxLayer
@@ -128,10 +185,9 @@ function LandingPage() {
                         justifyContent: 'center',
                     }}
                     onClick={() => parallax.current.scrollTo(0)}>
-                    {/* <img src={url('clients-main')} style={{ width: '40%' }} /> */}
                     <TextContainer >
                         <Text>
-                            Ofrecemos datos en tiempo real para clientes exigentes de MercadoLibre para aumentar sus ventas.
+                            {text1Str}
                         </Text>
                     </TextContainer>
                 </ParallaxLayer>
@@ -145,8 +201,7 @@ function LandingPage() {
                         justifyContent: 'center',
                         pointerEvents: 'none',
                     }}>
-                    {/* <img src={url('earth')} style={{ width: '60%' }} /> */}
-                    <Carousel_Comp />
+                    <CarouselComp />
                 </ParallaxLayer>
 
                 <ParallaxLayer
@@ -155,7 +210,6 @@ function LandingPage() {
                     style={{
                         backgroundSize: '80%',
                         backgroundPosition: 'center',
-                        // backgroundImage: url('clients', true),
                     }}
                 />
 
@@ -170,11 +224,10 @@ function LandingPage() {
                         alignItems: 'center',
                         justifyContent: 'center'
                     }}>
-                    <img src={"https://botycloud.com/wp-content/uploads/2022/09/Boty.gif"} style={{
-                        width: '20%',
-                        // border: 'solid 2px #330099',
-                        // borderRadius: '15%',
-                    }} />
+                    <BotyHead 
+                    alt='Boty Head'
+                    src={BotyHeadImage}
+                     />
                 </ParallaxLayer>
 
                 <ParallaxLayer
@@ -186,28 +239,10 @@ function LandingPage() {
                         alignItems: 'center',
                         justifyContent: 'center',
                     }}>
-                    {/* <img src={url('bash')} style={{ width: '40%' }} /> */}
-                    {/* 
-                    // Create a text component that says:
-                    ¡Optimiza tu negocio en Mercado Libre con nuestra solución en la nube! Procesamos la información de tus productos para brindarte insights valiosos y automatizar tus procesos de venta. ¡Deja que la nube haga el trabajo pesado, mientras te concentras en lo que realmente importa: vender! ¡Con nuestra solución en la nube, estarás a la vanguardia de tu negocio!
-
-                    */}
-                    <div style={{
-                        color: '#fff',
-                        fontSize: '1.5em',
-                        fontWeight: 'bold',
-                        textAlign: 'center',
-                        width: '60%',
-                        // llevalo un poco mas a la izquierda
-                        marginRight: '30%',
-                    }}>
-                        ¡Optimiza tu negocio en Mercado Libre con nuestra solución en la nube! Procesamos la información de tus productos para brindarte insights valiosos y automatizar tus procesos de venta. ¡Deja que la nube haga el trabajo pesado, mientras te concentras en lo que realmente importa: vender! ¡Con nuestra solución en la nube, estarás a la vanguardia de tu negocio!
-                    </div>
+                    <TextII>{text2Str}</TextII>
                 </ParallaxLayer>
 
 
-
-                {/* Create another layer */}
                 <ParallaxLayer
                     offset={2.7}
                     speed={0.2}
@@ -220,7 +255,6 @@ function LandingPage() {
                     <TextContainer >
                         <TitleText>Packs</TitleText>
                     </TextContainer>
-                    {/* <img src={url('clients-main')} style={{ width: '40%' }} /> */}
                 </ParallaxLayer>
                 <ParallaxLayer
                     offset={3}
@@ -231,7 +265,46 @@ function LandingPage() {
                         alignItems: 'center',
                         justifyContent: 'center',
                     }}>
-                    <AllPacksComponents/>
+
+                    <AllPacksComponents />
+                </ParallaxLayer>
+                <ParallaxLayer
+                    offset={4}
+                    speed={0.1}
+                    style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        // pointerEvents: 'none'
+                    }}>
+                    <BotyImageContainer >
+                        <BotyImage 
+                        alt='Boty Body'
+                        src={BotyBodyImage} />
+                    </BotyImageContainer>
+                </ParallaxLayer>
+
+                <ParallaxLayer
+                    offset={4}
+                    speed={.4}
+                    style={{
+                        display: 'block',
+                        width: '90%',
+                        marginTop: '20%',
+                        marginLeft: '60%'
+                    }}    >
+                    <Button text="Conéctate con nosotros" onClick={() => redirectToPath("contacto")} />
+                </ParallaxLayer>
+                <ParallaxLayer
+                    offset={4}
+                    speed={.5}
+                    style={{
+                        display: 'block',
+                        width: '90%',
+                        marginTop: '30%',
+                        marginLeft: '60%'
+                    }}    >
+                    <Button text="Regístrate ahora" color="#3A00A3" onClick={() => redirectToPath("register")} />
                 </ParallaxLayer>
             </Parallax>
         </div>
@@ -239,12 +312,6 @@ function LandingPage() {
 }
 
 
-
-// function LandingPage() {
-//     return (
-//         <AllPacksComponents/>
-//     )
-// }
 
 export default LandingPage;
 
