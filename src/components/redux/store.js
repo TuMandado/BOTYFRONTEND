@@ -1,5 +1,5 @@
 import { createStore, combineReducers } from 'redux';
-import authReducer from './reducers/authReducer';
+import authReducer from './reducers/userReducer';
 // import userReducer from './reducers/userReducer';
 // import projectReducer from './reducers/projectReducer';
 // import catalogReducer from './reducers/catalogReducer';
@@ -10,7 +10,7 @@ import authReducer from './reducers/authReducer';
 // import cotizationReducer from './reducers/cotizationReducer';
 
 const rootReducer = combineReducers({
-  auth: authReducer,
+  user: authReducer,
 //   user: userReducer,
 //   project: projectReducer,
 //   catalog: catalogReducer,

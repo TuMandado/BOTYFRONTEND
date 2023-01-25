@@ -10,7 +10,7 @@ const {
   background,
   primary,
   secondary,
-  callToAction,
+  // callToAction,
   text
 } = colours;
 
@@ -96,7 +96,9 @@ const UserLogin = () => {
   return (
     <RegisterContainer>
       <Logo src={logo} alt="company-logo" />
-      <FormStyle>
+      <FormStyle
+        onSubmit={handleSubmit}
+      >
         <InputContainer>
           <InputStyle
             id="email"

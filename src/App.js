@@ -2,18 +2,7 @@
 import './App.css';
 // Import react router
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { connect } from 'react-redux';
-// import LandingPage from './LandingPage';
-// import Catalogo from './Catalogo';
-// import CompanyRegistration from './CompanyRegistration';
-// import Competencia from './Competencia';
-// import General from './General';
-// import Home from './Home';
-// import Projects from './Projects';
-// import UserRegistration from './UserRegistration';
-// import UserLogin from './UserLogin';
-// import Admin from './Admin';
-// import Contact from './Contact';
+import { useDispatch, useSelector } from "react-redux";
 import PAGES from './pages';
 
 
@@ -26,6 +15,8 @@ function App(props) {
     notLoggedUserList,
     adminUserList,
   } = pages;
+  const dispatch = useDispatch();
+  const isLoggedIn = useSelector((state) => state.isLoggedIn);
   // Rewrite using routes
   return (
     <Router>
@@ -61,12 +52,7 @@ function App(props) {
   );
 }
 
-const mapStateToProps = state => {
-  return {
-    isLoggedIn: state.auth.isLoggedIn,
-    // userType: state.auth.userType
-  };
-};
 
-export default connect(mapStateToProps)(App);
+// export default connect(mapStateToProps)(App);
+
 

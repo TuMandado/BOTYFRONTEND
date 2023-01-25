@@ -1,8 +1,13 @@
 const initialState = {
   isLoggedIn: false,
-  userType: '',
+  email: '',
+  phone: '',
+  isAdmin: false,
+  updatedAt: '',
+  profilePicture: '',
+  projects: [],
+  settings: {},
   token: '',
-  error: ''
 };
 
 const authReducer = (state = initialState, action) => {

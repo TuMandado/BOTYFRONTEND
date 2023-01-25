@@ -6,9 +6,8 @@ const colours = {
   text: '#1E1E1E',
 }
 
-
 const Utils = {
-  colours
+  colours,
 }
 
 // Export the function
