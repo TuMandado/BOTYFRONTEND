@@ -52,7 +52,7 @@ function App(props) {
   );
 }
 
-
-// export default connect(mapStateToProps)(App);
+// Export
+export default App;
 
 
