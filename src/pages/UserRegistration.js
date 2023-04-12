@@ -86,10 +86,10 @@ const UserRegistration = () => {
                 margin="normal"
               />
               <Button variant="contained" color="primary" className={classes.button} type="submit">
-                Register
+                Registrarse
               </Button>
               <Box mt={2}>
-                <Link to="/userlogin">Already have an account? Log in</Link>
+                <Link to="/userlogin">¿Ya tienes cuenta? Ingresar</Link>
               </Box>
             </form>
         </Grid>
