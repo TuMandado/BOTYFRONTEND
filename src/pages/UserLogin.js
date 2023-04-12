@@ -104,7 +104,7 @@ const UserLogin = () => {
             id="email"
             name="email"
             label="Email"
-            placeholder="Enter your email"
+            placeholder="Ingrese su email"
             value={formData.email}
             onChange={handleChange}
           />
@@ -112,25 +112,30 @@ const UserLogin = () => {
             id="password"
             name="password"
             label="Password"
-            placeholder='Enter your password'
+            placeholder='Ingrese su password'
             value={formData.password}
             onChange={handleChange}
             type="password"
           />
         </InputContainer>
         <ButtonContainer>
+          <Link
+            to="/login"
+            style={{ textDecoration: 'none' }}
+          >
           <Button
             type="submit"
-            text='Login'
+            text='Ingresar'
             color={primary}
             />
+          </Link>
           <Link
             to="/register"
             style={{ textDecoration: 'none' }}
           >
             <Button
               type="submit"
-              text='Register'
+              text='Registrarse'
               color={secondary}
             />
           </Link>
